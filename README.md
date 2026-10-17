@@ -1,6 +1,6 @@
 # Qwen3 Math Reasoning Lab
 
-Qwen3-4B-Base 数学推理后训练项目：**人工审核数据 → QLoRA SFT → vLLM GRPO → 评分器审计 → 统一评测**。
+Qwen3-4B-Base 数学推理后训练项目：**审核数据 → QLoRA SFT → vLLM GRPO → 评分器审计 → 统一评测**。
 
 本仓库整理实际运行的训练、答案核验、数据筛选和实验记录。主结果来自同一官方 MATH Level 2–3 测试集的 2024 题，原始模型回答按固定 v4 评分器统一核验。
 
