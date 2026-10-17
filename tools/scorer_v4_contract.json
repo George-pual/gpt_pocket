@@ -1,0 +1,7 @@
+{
+  "schema": "math-verify-final-answer-v4",
+  "module_filename": "math_verification.py",
+  "sha256": "26565fd5639523aaad27b7211d32623d7a5a95605d605e1ee23dec69c412bec8",
+  "math_verify_version": "0.8.0",
+  "antlr4_python3_runtime_version": "4.13.2"
+}

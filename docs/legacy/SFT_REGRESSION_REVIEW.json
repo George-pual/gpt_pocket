@@ -1,0 +1,128 @@
+{
+  "schema": "sft-regression-review-v1",
+  "review_date": "2026-10-12",
+  "method": "Offline saved-score pairing plus model-assisted inspection of eight deliberately selected cases; no new inference or rescoring.",
+  "case_selection": "Illustrative formatted, nontruncated regressions; not a random sample or an estimate of semantic category frequencies.",
+  "sources": {
+    "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/base.jsonl": "a9a8660438a32bd178b9bdb090e6a627ca796c2f72d924b3e94ee2c816a65f2f",
+    "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/sft_v3.jsonl": "a934441d096e5e1861c896d05cdd48b3205e9bea695185d2d9231186de5a817b"
+  },
+  "counts": {
+    "paired_questions": 2024,
+    "base_correct": 1512,
+    "sft_correct": 1330,
+    "improved": 177,
+    "regressed": 359,
+    "regressed_sft_truncated": 68,
+    "regressed_sft_format_eos": 277,
+    "regressed_sft_score_status": {
+      "incorrect": 275,
+      "extraction_failed": 68,
+      "prediction_unsupported": 10,
+      "prediction_parse_failed": 6
+    }
+  },
+  "reviewed_cases": [
+    {
+      "row_id": "math:algebra/test-00000-of-00001.parquet:82",
+      "category": "位值建模错误",
+      "observation": "将AMC10、AMC12的五位数相加误当数字求和。",
+      "mathematical_check": "用10000A+1000M+100C表示高位，得到100A+10M+C=617，A+M+C=14。",
+      "gold": "14",
+      "sft_prediction": "0",
+      "base_correct": true,
+      "sft_correct": false,
+      "sft_format_eos": true,
+      "sft_truncated": false
+    },
+    {
+      "row_id": "math:algebra/test-00000-of-00001.parquet:141",
+      "category": "遗漏边界条件",
+      "observation": "将正整数因子的乘积一概判为合数，漏掉一个因子为1；还把n=1/2时的乘积0写成1。",
+      "mathematical_check": "n=3时(n-1)(n-2)=2；n>=4时两因子都大于1，共1个正整数解。",
+      "gold": "1",
+      "sft_prediction": "0",
+      "base_correct": true,
+      "sft_correct": false,
+      "sft_format_eos": true,
+      "sft_truncated": false
+    },
+    {
+      "row_id": "math:counting_and_probability/test-00000-of-00001.parquet:69",
+      "category": "擅自增加题目条件",
+      "observation": "原题仅要求第一字母为元音且不重复，却限制后两字母为辅音。",
+      "mathematical_check": "各位置选择数为5、25、24、4、9、8，乘积864000。",
+      "gold": "864000",
+      "sft_prediction": "604800",
+      "base_correct": true,
+      "sft_correct": false,
+      "sft_format_eos": true,
+      "sft_truncated": false
+    },
+    {
+      "row_id": "math:counting_and_probability/test-00000-of-00001.parquet:79",
+      "category": "公式正确但数值计算错误",
+      "observation": "列出6!*5!*3!*3!，最终乘积却写成4147200。",
+      "mathematical_check": "720*120*6*6=3110400；应区分建模正确与执行计算错误。",
+      "gold": "3,\\!110,\\!400",
+      "sft_prediction": "4147200",
+      "base_correct": true,
+      "sft_correct": false,
+      "sft_format_eos": true,
+      "sft_truncated": false
+    },
+    {
+      "row_id": "math:number_theory/test-00000-of-00001.parquet:25",
+      "category": "素因子指数补齐与回代缺失",
+      "observation": "将720=2^4*3^2*5补成立方时少补一个2，且所报立方根未回代成立。",
+      "mathematical_check": "最小乘数为2^2*3*5^2=300，720*300=216000=60^3。",
+      "gold": "60",
+      "sft_prediction": "30",
+      "base_correct": true,
+      "sft_correct": false,
+      "sft_format_eos": true,
+      "sft_truncated": false
+    },
+    {
+      "row_id": "math:prealgebra/test-00000-of-00001.parquet:146",
+      "category": "提取公因式错误",
+      "observation": "将3*2^20+2^21错误化成(3+1)*2^21。",
+      "mathematical_check": "应为(3+2)*2^20，除以2^17后为40。",
+      "gold": "40",
+      "sft_prediction": "64",
+      "base_correct": true,
+      "sft_correct": false,
+      "sft_format_eos": true,
+      "sft_truncated": false
+    },
+    {
+      "row_id": "math:precalculus/test-00000-of-00001.parquet:35",
+      "category": "公式适用条件错误",
+      "observation": "将三角形ABM当作直角三角形，用AB/BM求cos角ABM。",
+      "mathematical_check": "AM=BM=13，余弦定理给(10^2+13^2-13^2)/(2*10*13)=5/13。",
+      "gold": "\\frac{5}{13}",
+      "sft_prediction": "10/13",
+      "base_correct": true,
+      "sft_correct": false,
+      "sft_format_eos": true,
+      "sft_truncated": false
+    },
+    {
+      "row_id": "math:precalculus/test-00000-of-00001.parquet:83",
+      "category": "列式正确但解方程错误",
+      "observation": "已列a+2c=1、2a+c=-4，却给出(-2,3)，没有代回检验。",
+      "mathematical_check": "联立得(a,c)=(-3,2)，满足两条方程；(-2,3)不满足。",
+      "gold": "(-3,2)",
+      "sft_prediction": "(-2,3)",
+      "base_correct": true,
+      "sft_correct": false,
+      "sft_format_eos": true,
+      "sft_truncated": false
+    }
+  ],
+  "limitations": [
+    "Automatic final-answer scores, not independent certification of all derivations.",
+    "Observed errors do not establish which SFT examples or hyperparameters caused them.",
+    "Known benchmark used for retrospective feedback; do not treat it as a fresh blind test."
+  ]
+}

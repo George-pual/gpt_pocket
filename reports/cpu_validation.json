@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "tests_run": 46,
+  "passed": 44,
+  "skipped": 2,
+  "skips": [
+    "PyTorch-dependent group masking test: no GPU stack in CPU check environment",
+    "Local raw-artifact integration test: datasets intentionally not distributed"
+  ],
+  "python_syntax_files": 155,
+  "syntax_errors": 0,
+  "credential_scan_findings": 0,
+  "gpu_training_reexecuted": false,
+  "raw_model_or_data_uploaded": false
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://your-provider.example/v1",
+  "model": "deepseek-v4-flash",
+  "key_env": "MATH_REVIEW_API_KEY",
+  "timeout_seconds": 45,
+  "max_output_tokens": 1024,
+  "max_calls": 2196,
+  "thinking": "disabled"
+}

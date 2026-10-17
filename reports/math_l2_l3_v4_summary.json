@@ -1,0 +1,157 @@
+{
+  "status": "complete",
+  "checked_at_utc": "2026-10-17T01:25:53.165080+00:00",
+  "schema": "math-verify-final-answer-v4",
+  "grader_sha256": "26565fd5639523aaad27b7211d32623d7a5a95605d605e1ee23dec69c412bec8",
+  "grader_dependencies": {
+    "math-verify": "0.8.0",
+    "antlr4-python3-runtime": "4.13.2"
+  },
+  "test_sha256": "5e1914a1721abc1f6d0dfc53f8698d8e40345df4c574a6af8dfb00ae7112f85d",
+  "table": {
+    "base": {
+      "questions": 2024,
+      "correct": 1417,
+      "accuracy": 0.700098814229249,
+      "statuses": {
+        "prediction_parse_failed": 92,
+        "correct": 1417,
+        "incorrect": 395,
+        "extraction_failed": 119,
+        "verify_error": 1
+      },
+      "timeout_count": 0,
+      "by_level": {
+        "Level 2": {
+          "questions": 894,
+          "correct": 662
+        },
+        "Level 3": {
+          "questions": 1130,
+          "correct": 755
+        }
+      },
+      "original_v2_correct": 1397,
+      "grader_only_net_questions": 20
+    },
+    "sft": {
+      "questions": 2024,
+      "correct": 1570,
+      "accuracy": 0.775691699604743,
+      "statuses": {
+        "correct": 1570,
+        "incorrect": 398,
+        "prediction_parse_failed": 13,
+        "extraction_failed": 43
+      },
+      "timeout_count": 0,
+      "by_level": {
+        "Level 2": {
+          "questions": 894,
+          "correct": 742
+        },
+        "Level 3": {
+          "questions": 1130,
+          "correct": 828
+        }
+      },
+      "original_v2_correct": 1562,
+      "grader_only_net_questions": 8
+    },
+    "grpo1": {
+      "questions": 2024,
+      "correct": 1628,
+      "accuracy": 0.8043478260869565,
+      "statuses": {
+        "correct": 1628,
+        "incorrect": 345,
+        "prediction_parse_failed": 10,
+        "extraction_failed": 41
+      },
+      "timeout_count": 0,
+      "by_level": {
+        "Level 2": {
+          "questions": 894,
+          "correct": 751
+        },
+        "Level 3": {
+          "questions": 1130,
+          "correct": 877
+        }
+      },
+      "original_v2_correct": 1618,
+      "grader_only_net_questions": 10
+    },
+    "grpo2": {
+      "questions": 2024,
+      "correct": 1724,
+      "accuracy": 0.8517786561264822,
+      "statuses": {
+        "correct": 1724,
+        "incorrect": 257,
+        "extraction_failed": 35,
+        "prediction_parse_failed": 8
+      },
+      "timeout_count": 0,
+      "by_level": {
+        "Level 2": {
+          "questions": 894,
+          "correct": 787
+        },
+        "Level 3": {
+          "questions": 1130,
+          "correct": 937
+        }
+      }
+    }
+  },
+  "paired": {
+    "gained": 176,
+    "regressed": 80,
+    "net_questions": 96,
+    "percentage_point_change": 4.743083003952569
+  },
+  "source_hashes": {
+    "base": {
+      "original_sha256": "09954f8155f9fab7574ef188fa0f0b409cb588f6729b5c95819cdcf9d9921ab3",
+      "input_sha256": "616e31fdd5eb5ac6fd4f46a55825471aa771568e96580e9fdfa321db0cc55335",
+      "regraded_sha256": "61bf69da7897dcc0777c56eab659b5f3151090712f7534b7203724ed9d243ee6"
+    },
+    "sft": {
+      "original_sha256": "37b41af299bf9156ddbb24ab651c09810b6a747b5ee1684f89f06254438d0334",
+      "input_sha256": "6142db469ae99b363799452a33f5756e4df967a6b692bd42e84bf0d958f3e777",
+      "regraded_sha256": "4357d6676c751c7aab932fe0af77c9d254b8e190c5c35aaad1f1725ce440ab13"
+    },
+    "grpo1": {
+      "original_sha256": "bdb01f7f6db0dfedf1c6e7f2934af5e23b37355fb9c10317aa8f3a8a52226c15",
+      "input_sha256": "9abfefe818066eb36b1213d0c3e359e2f36a95bd798800733aa7a510ddf651f4",
+      "regraded_sha256": "f9e7e92712091bb84cc9d675d66b7be76dead19738dbb12c0309286031aa19db"
+    }
+  },
+  "current_answers_sha256": "f1a4021141afd22507b9f5a4bf1c8a7c06a66a8581205d8671512ae025c207a3",
+  "provenance_checks_passed": [
+    "model_weights",
+    "data_sha256",
+    "prompt_ids_sha256",
+    "sampling",
+    "seed_policy",
+    "template",
+    "unique_ids",
+    "gold",
+    "verbatim_completions",
+    "original_scores",
+    "model_lineage"
+  ],
+  "caveats": [
+    "历史回答只重新评分，未重新生成；原v2报告保留。所有模型分母固定2024，未删除无法核验的回答。",
+    "统一评分器代码与合同依赖；历史复评在Windows，本轮原评分在Linux。未记录TimeoutError；Base有1份AttributeError仍记为未通过，不声称该答案数学错误。",
+    "未成功提取、解析或核验的回答计为未通过；格式合格率与最终答案正确率分开，测试不调用API。",
+    "该结果是同一测试集上的最终答案得分比较，不代表推导逐步正确，也不是控制所有训练变量的因果实验。"
+  ],
+  "retrieval": {
+    "files_verified": 2631,
+    "archive_sha256": "e2ec6cf557bfba11dfc203ccd28af175efc4cb7d6ee3c8a36267cb2e3ab82cde",
+    "adapter_sha256": "24a442376ceef7de2a0062dffc33a558b17e7f5232535307bb69d04f7a9c90e9"
+  },
+  "server_required": false
+}

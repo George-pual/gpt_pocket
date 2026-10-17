@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "r1-reasoning-lab"
+version = "0.1.0"
+description = "Evidence-driven CPU audit and reporting for Qwen SFT/GRPO experiments"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+verify = ["math-verify==0.8.0", "antlr4-python3-runtime==4.13.2"]
+
+[project.scripts]
+r1-lab = "r1_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

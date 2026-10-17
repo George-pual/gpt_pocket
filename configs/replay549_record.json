@@ -1,0 +1,71 @@
+{
+  "questions": 549,
+  "difficulty": {
+    "easy": 352,
+    "medium": 145,
+    "hard": 52
+  },
+  "subject": {
+    "Number Theory": 69,
+    "Algebra": 120,
+    "Prealgebra": 105,
+    "Intermediate Algebra": 75,
+    "Counting & Probability": 72,
+    "Precalculus": 63,
+    "Geometry": 45
+  },
+  "level": {
+    "Level 3": 289,
+    "Level 2": 260
+  },
+  "origin": {
+    "retained_previous": 295,
+    "supplement": 254
+  },
+  "exact_overlap": {
+    "sft": 0,
+    "development": 0,
+    "official_test": 0
+  },
+  "selection": "User explicitly chose all 549 reviewed contrast questions; no half or 3:4:3 constraint this round",
+  "adapter_sha256": "8bd99e8a8a75abbe5208a4ee1bf8b5ade805dffcd91dab589e84a754a9cc6186",
+  "base_weight_sha256": {
+    "model-00001-of-00003.safetensors": "4c807e2503d68ae373d508689d00a41f4b33f33c2536da97ab81a20caddc1241",
+    "model-00002-of-00003.safetensors": "f4707585548b2fc75a6b1d732e8465c62040a8699903c32850781beeb9b27826",
+    "model-00003-of-00003.safetensors": "c7b1aa8fb672de2e00423c99876926022e50b18d4f0d140670788510a27f9965"
+  },
+  "grader_sha256": "26565fd5639523aaad27b7211d32623d7a5a95605d605e1ee23dec69c412bec8",
+  "reward_sha256": "0cecbfaaa21dac778b507c4dc054c991065acac5111784983d6de89ab593d9a5",
+  "train_sha256": "a84682f118fe75b177b6a666cb6b6cbbfa49651d87696c03cdf226260f4a2955",
+  "test_sha256": "5e1914a1721abc1f6d0dfc53f8698d8e40345df4c574a6af8dfb00ae7112f85d",
+  "source_sha256": {
+    "annotated_scores.jsonl": "cccc73d3809935ef71caf0fadf675a1d9b9c42e25d49c49edc8a244eac913a15",
+    "answer_correctness_reaudit_final.jsonl": "ae3ec2d7b161740e68c245b84e82ef6e235cb5b6187a24a3deb560a62b0bdc41",
+    "answer_correctness_reaudit_final_summary.json": "cf37895a9b9fab3ac064c2ed34cb5209a03336687118a1d5235cdabeff23abb2"
+  },
+  "training": {
+    "epochs": 1,
+    "updates": 549,
+    "generations": 4,
+    "questions_per_generation": 3,
+    "training_microbatch": 2,
+    "gradient_accumulation": 2,
+    "generation_batch_size": 12,
+    "steps_per_generation": 6,
+    "vllm_memory": 0.6,
+    "learning_rate": 5e-06,
+    "warmup_steps": 10,
+    "scheduler": "linear",
+    "beta": 0.04,
+    "format_weight": 0.1,
+    "initial_model": "Previous final GRPO adapter; new optimizer/scheduler"
+  },
+  "api": {
+    "role": "Verbatim original-answer extraction only; correctness from pinned local Math-Verify",
+    "max_training_calls": 2196,
+    "pilot_calls": 8,
+    "key_persisted": false
+  },
+  "evaluation": "Same official MATH L2-L3 2024 questions with original strict Math-Verify metric; API-free for comparison",
+  "shutdown_authorized": false
+}

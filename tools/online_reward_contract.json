@@ -1,0 +1,6 @@
+{
+  "policy": "correctness_gated_strict_format_v1",
+  "module_filename": "online_grpo_reward.py",
+  "sha256": "0cecbfaaa21dac778b507c4dc054c991065acac5111784983d6de89ab593d9a5",
+  "format_weight": 0.1
+}

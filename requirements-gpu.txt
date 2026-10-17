@@ -1,0 +1,11 @@
+# Historical GPU stack anchors, not a complete CUDA environment lock.
+trl==0.23.1
+vllm==0.10.2
+peft
+accelerate
+bitsandbytes
+datasets
+tensorboard
+math-verify==0.8.0
+antlr4-python3-runtime==4.13.2
+# Install a compatible CUDA/PyTorch stack first; see docs/REPRODUCING.md.

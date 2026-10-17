@@ -1,0 +1,63 @@
+{
+  "schema": "r1-evidence-registry-v1",
+  "datasets": {
+    "math": {
+      "expected_rows": 2024,
+      "models": {
+        "base": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/base.jsonl",
+          "sha256": "a9a8660438a32bd178b9bdb090e6a627ca796c2f72d924b3e94ee2c816a65f2f"
+        },
+        "sft_v3": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/sft_v3.jsonl",
+          "sha256": "a934441d096e5e1861c896d05cdd48b3205e9bea695185d2d9231186de5a817b"
+        },
+        "grpo1024": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/grpo1024.jsonl",
+          "sha256": "8e023de35ba6e3e71812bafba6c81d7a66bf1bf73b41e1b221373b8daa7c15d9"
+        },
+        "grpo1280": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/grpo1280.jsonl",
+          "sha256": "b0d63ec9a79e1bca43c1f51fb9462279572473838b3e8687165e85290e496e0b"
+        },
+        "grpo1536": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/grpo1536.jsonl",
+          "sha256": "ffdc790de83b0cb82646c178ff7d92a5c2cd613cae5fc3ccf143535dbb233c99"
+        },
+        "sft_v4": {
+          "path": "datasets/math/sft_v4_vs_base_v32/results/sft_v4_scored_v32.jsonl",
+          "sha256": "5981b87531176d7690950a2344e96788cd7aad1f1500e2671afa9f332baddc99"
+        }
+      },
+      "remaining_ids": {
+        "path": "datasets/math/sft_v4_vs_base_v32/questions_remaining.jsonl",
+        "sha256": "21abf8d50b46a06f20238ef0bf1c77ec43ebdf0f1c4c7fb8666db1b0574ccbcd"
+      }
+    },
+    "gsm8k": {
+      "expected_rows": 1319,
+      "models": {
+        "base": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/base.jsonl",
+          "sha256": "e27ccc0d7efa26edf54c2eeac212b12dbfc489e78eff565def766b9b58bcb03e"
+        },
+        "sft_v3": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/sft_v3.jsonl",
+          "sha256": "b0c09a595915dd629dc0602b3bfa28df8b0bbc387f1ea42b6b643794225d3df7"
+        },
+        "grpo1024": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/grpo1024.jsonl",
+          "sha256": "0e508d6a6adcce9e8d2377bb2b7bf593237f7e47ed6af812a00aeb4e584c07fe"
+        },
+        "grpo1280": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/grpo1280.jsonl",
+          "sha256": "dfb74c25c8ebe1a9e4f965e5956542f6cf990dfc720306ff31cf1cdc4375df6d"
+        },
+        "grpo1536": {
+          "path": "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/grpo1536.jsonl",
+          "sha256": "7681edec4d1f3bfa57a86596f601c8d2c1f14b733642ee291d84b1c4c89df6f1"
+        }
+      }
+    }
+  }
+}

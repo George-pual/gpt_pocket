@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Qwen SFT / GRPO 实验证据</title><style>
+body{font:16px/1.65 system-ui,sans-serif;background:#101827;color:#e8edf5;margin:0 auto;padding:32px;max-width:1300px}
+h1{font-size:34px}h2{font-size:21px;color:#88d8ce}section{margin:28px 0;padding:22px;background:#192538;border-radius:14px}
+.scroll{overflow:auto}table{border-collapse:collapse;width:100%;white-space:nowrap}th,td{text-align:left;padding:12px;border-bottom:1px solid #354155}
+th{color:#a6b8d3}p{max-width:1000px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}a{color:#88d8ce}
+</style><h1>Qwen3-4B · SFT → GRPO</h1>
+<p>已有实验的可追溯评测。SFT 改善格式，GRPO 恢复部分正确率；MATH 最终答案准确率仍以 Base 最高。长度下降和格式提升不能单独证明推理能力提升。</p>
+<p>remaining1824 为此前旧 200 题之外的确认子集；all 已包含 previous200，二者不能重复相加。自动评分不认证逐步推导。未确认仍计入总数。</p>
+<section><h2>math · all</h2><div class='scroll'><table><thead><tr><th>模型</th><th>判对/总数</th><th>自动判对率</th><th>95% Wilson 区间</th><th>相对 Base 配对变化</th><th>未确认</th><th>截断</th><th>平均 tokens</th></tr></thead><tbody><tr><td>base</td><td>1512/2024</td><td>74.70%</td><td>72.76%–76.55%</td><td>—</td><td>117</td><td>1.93%</td><td>427.7</td></tr><tr><td>sft_v3</td><td>1330/2024</td><td>65.71%</td><td>63.62%–67.75%</td><td>-8.99 pp (177↑ / 359↓)</td><td>156</td><td>5.63%</td><td>365.5</td></tr><tr><td>grpo1024</td><td>1463/2024</td><td>72.28%</td><td>70.29%–74.19%</td><td>-2.42 pp (206↑ / 255↓)</td><td>93</td><td>2.77%</td><td>279.4</td></tr><tr><td>grpo1280</td><td>1454/2024</td><td>71.84%</td><td>69.84%–73.75%</td><td>-2.87 pp (198↑ / 256↓)</td><td>98</td><td>3.16%</td><td>291.1</td></tr><tr><td>grpo1536</td><td>1469/2024</td><td>72.58%</td><td>70.59%–74.48%</td><td>-2.12 pp (203↑ / 246↓)</td><td>83</td><td>2.57%</td><td>275.3</td></tr><tr><td>sft_v4</td><td>1386/2024</td><td>68.48%</td><td>66.42%–70.47%</td><td>-6.23 pp (192↑ / 318↓)</td><td>71</td><td>2.32%</td><td>233.9</td></tr></tbody></table></div></section><section><h2>math · remaining1824</h2><div class='scroll'><table><thead><tr><th>模型</th><th>判对/总数</th><th>自动判对率</th><th>95% Wilson 区间</th><th>相对 Base 配对变化</th><th>未确认</th><th>截断</th><th>平均 tokens</th></tr></thead><tbody><tr><td>base</td><td>1358/1824</td><td>74.45%</td><td>72.40%–76.40%</td><td>—</td><td>107</td><td>1.64%</td><td>418.4</td></tr><tr><td>sft_v3</td><td>1195/1824</td><td>65.52%</td><td>63.30%–67.66%</td><td>-8.94 pp (163↑ / 326↓)</td><td>141</td><td>5.54%</td><td>360.9</td></tr><tr><td>grpo1024</td><td>1328/1824</td><td>72.81%</td><td>70.72%–74.80%</td><td>-1.64 pp (194↑ / 224↓)</td><td>78</td><td>2.52%</td><td>270.1</td></tr><tr><td>grpo1280</td><td>1314/1824</td><td>72.04%</td><td>69.94%–74.05%</td><td>-2.41 pp (187↑ / 231↓)</td><td>82</td><td>2.91%</td><td>280.8</td></tr><tr><td>grpo1536</td><td>1332/1824</td><td>73.03%</td><td>70.94%–75.01%</td><td>-1.43 pp (191↑ / 217↓)</td><td>71</td><td>2.36%</td><td>266.5</td></tr><tr><td>sft_v4</td><td>1260/1824</td><td>69.08%</td><td>66.92%–71.16%</td><td>-5.37 pp (183↑ / 281↓)</td><td>62</td><td>2.25%</td><td>230.0</td></tr></tbody></table></div></section><section><h2>math · previous200</h2><div class='scroll'><table><thead><tr><th>模型</th><th>判对/总数</th><th>自动判对率</th><th>95% Wilson 区间</th><th>相对 Base 配对变化</th><th>未确认</th><th>截断</th><th>平均 tokens</th></tr></thead><tbody><tr><td>base</td><td>154/200</td><td>77.00%</td><td>70.69%–82.29%</td><td>—</td><td>10</td><td>4.50%</td><td>513.0</td></tr><tr><td>sft_v3</td><td>135/200</td><td>67.50%</td><td>60.73%–73.61%</td><td>-9.50 pp (14↑ / 33↓)</td><td>15</td><td>6.50%</td><td>407.1</td></tr><tr><td>grpo1024</td><td>135/200</td><td>67.50%</td><td>60.73%–73.61%</td><td>-9.50 pp (12↑ / 31↓)</td><td>15</td><td>5.00%</td><td>364.5</td></tr><tr><td>grpo1280</td><td>140/200</td><td>70.00%</td><td>63.32%–75.93%</td><td>-7.00 pp (11↑ / 25↓)</td><td>16</td><td>5.50%</td><td>385.1</td></tr><tr><td>grpo1536</td><td>137/200</td><td>68.50%</td><td>61.77%–74.54%</td><td>-8.50 pp (12↑ / 29↓)</td><td>12</td><td>4.50%</td><td>356.1</td></tr><tr><td>sft_v4</td><td>126/200</td><td>63.00%</td><td>56.12%–69.39%</td><td>-14.00 pp (9↑ / 37↓)</td><td>9</td><td>3.00%</td><td>270.2</td></tr></tbody></table></div></section><section><h2>gsm8k · all</h2><div class='scroll'><table><thead><tr><th>模型</th><th>判对/总数</th><th>自动判对率</th><th>95% Wilson 区间</th><th>相对 Base 配对变化</th><th>未确认</th><th>截断</th><th>平均 tokens</th></tr></thead><tbody><tr><td>base</td><td>1127/1319</td><td>85.44%</td><td>83.44%–87.24%</td><td>—</td><td>33</td><td>1.67%</td><td>281.2</td></tr><tr><td>sft_v3</td><td>1057/1319</td><td>80.14%</td><td>77.90%–82.20%</td><td>-5.31 pp (84↑ / 154↓)</td><td>71</td><td>5.16%</td><td>315.5</td></tr><tr><td>grpo1024</td><td>1133/1319</td><td>85.90%</td><td>83.92%–87.67%</td><td>+0.45 pp (97↑ / 91↓)</td><td>21</td><td>1.52%</td><td>182.9</td></tr><tr><td>grpo1280</td><td>1131/1319</td><td>85.75%</td><td>83.76%–87.53%</td><td>+0.30 pp (97↑ / 93↓)</td><td>24</td><td>1.67%</td><td>190.0</td></tr><tr><td>grpo1536</td><td>1131/1319</td><td>85.75%</td><td>83.76%–87.53%</td><td>+0.30 pp (97↑ / 93↓)</td><td>22</td><td>1.52%</td><td>184.0</td></tr></tbody></table></div></section><section><h2>方法边界</h2><p>Recomputed from saved verdicts; no new inference or mathematical re-grading. Unconfirmed remains in denominator. Wilson intervals are descriptive and do not cover scorer error, model seed variability, test reuse or pretraining contamination.</p><p>↑ 表示 Base 未判对而候选判对；↓ 表示相反。区间仅描述题目抽样不确定性，不能据此推断小幅提升稳定成立。</p></section><details><summary>输入文件与 SHA256</summary><pre>math/base
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/base.jsonl
+SHA256 a9a8660438a32bd178b9bdb090e6a627ca796c2f72d924b3e94ee2c816a65f2f
+
+math/sft_v3
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/sft_v3.jsonl
+SHA256 a934441d096e5e1861c896d05cdd48b3205e9bea695185d2d9231186de5a817b
+
+math/grpo1024
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/grpo1024.jsonl
+SHA256 8e023de35ba6e3e71812bafba6c81d7a66bf1bf73b41e1b221373b8daa7c15d9
+
+math/grpo1280
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/grpo1280.jsonl
+SHA256 b0d63ec9a79e1bca43c1f51fb9462279572473838b3e8687165e85290e496e0b
+
+math/grpo1536
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/math_v32/grpo1536.jsonl
+SHA256 ffdc790de83b0cb82646c178ff7d92a5c2cd613cae5fc3ccf143535dbb233c99
+
+math/sft_v4
+datasets/math/sft_v4_vs_base_v32/results/sft_v4_scored_v32.jsonl
+SHA256 5981b87531176d7690950a2344e96788cd7aad1f1500e2671afa9f332baddc99
+
+math/cohort_membership
+datasets/math/sft_v4_vs_base_v32/questions_remaining.jsonl
+SHA256 21abf8d50b46a06f20238ef0bf1c77ec43ebdf0f1c4c7fb8666db1b0574ccbcd
+
+gsm8k/base
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/base.jsonl
+SHA256 e27ccc0d7efa26edf54c2eeac212b12dbfc489e78eff565def766b9b58bcb03e
+
+gsm8k/sft_v3
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/sft_v3.jsonl
+SHA256 b0c09a595915dd629dc0602b3bfa28df8b0bbc387f1ea42b6b643794225d3df7
+
+gsm8k/grpo1024
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/grpo1024.jsonl
+SHA256 0e508d6a6adcce9e8d2377bb2b7bf593237f7e47ed6af812a00aeb4e584c07fe
+
+gsm8k/grpo1280
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/grpo1280.jsonl
+SHA256 dfb74c25c8ebe1a9e4f965e5956542f6cf990dfc720306ff31cf1cdc4375df6d
+
+gsm8k/grpo1536
+datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/gsm8k_v31/grpo1536.jsonl
+SHA256 7681edec4d1f3bfa57a86596f601c8d2c1f14b733642ee291d84b1c4c89df6f1
+</pre></details></html>

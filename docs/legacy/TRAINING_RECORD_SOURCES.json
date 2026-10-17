@@ -1,0 +1,58 @@
+{
+  "assembled_date": "2026-10-12",
+  "scope": "Linked evidence snapshot for the problem-oriented retrospective; not an authenticity certificate",
+  "sources": {
+    "deliverables/SFTv3_GRPO_1536_training_handoff/TRAINING_REPORT.md": {
+      "bytes": 10272,
+      "sha256": "2aa9a7fbb9887edc0bacd318e6cd79ef5f788bb67da6294268488037ab9983e4"
+    },
+    "vllm_speed_tools/train_reviewed_sft.py": {
+      "bytes": 9258,
+      "sha256": "11df9218a147805919d5c7fae0159812d50949fe42e4148520136010ed60e5b3"
+    },
+    "sft_quality_audit_v2/revision_20261011_user15/README.md": {
+      "bytes": 3635,
+      "sha256": "1988ae7277efcaa40d0d774f1c4fa94e3e4dbb927e7a4612e5e85a5497b43e79"
+    },
+    "datasets/math/test_l2_l3_remaining_v1/combined_analysis_v32_final/ANALYSIS.md": {
+      "bytes": 5167,
+      "sha256": "1e429aca2605c2b5d25766e3ad8b9ad6fa096550482d4965c67143a102740583"
+    },
+    "sft_closure_results/REPORT.md": {
+      "bytes": 1708,
+      "sha256": "38a8251970a872416431e1eeb2162572a98e7399e38421d58312d2a42af143f8"
+    },
+    "datasets/math/sft_v4_vs_base_v32/ANALYSIS.md": {
+      "bytes": 3036,
+      "sha256": "112e3b51937d215f3716a813fd55033aa5daf019998ddb9d6a37856207cf5e52"
+    },
+    "closure_BC_results/REPORT.md": {
+      "bytes": 3551,
+      "sha256": "db66526c574a4bc047ef81fd73fa5322e97840c117265c389d7509388af93724"
+    },
+    "datasets/grpo_candidates_gsm8k_math_l2_l3/training_audit_1536/reward_signal_audit_v2/ANALYSIS.md": {
+      "bytes": 3198,
+      "sha256": "941f071de3d75933426bd07c775a57e4859df293907769160404d9f9a8cfab82"
+    },
+    "lr_ab256_experiment/ANALYSIS.md": {
+      "bytes": 4624,
+      "sha256": "53f5597634fb099a44f516d3ae7f64b43f9df2f530edfec12808862c6d39bd15"
+    },
+    "datasets/grpo_candidates_gsm8k_math_l2_l3/training_audit_1536/correctness_groups_five_bins/ANALYSIS.md": {
+      "bytes": 5443,
+      "sha256": "d24542b5f2f14577af8d9bee643d6ed9b040cff4ebf5f1ac900c40cf01edaaf3"
+    },
+    "vllm_C64_results/REPORT.md": {
+      "bytes": 4274,
+      "sha256": "1c9db2680eff3edd527226e3b429bcea15902bce671d1c127a74c2ff02109a9f"
+    },
+    "closure_BC_results/status.json": {
+      "bytes": 2113,
+      "sha256": "40e26bc1122325e412e7faeaf1657a473938ec1d6255a9c9f766fd8b4e6441d9"
+    },
+    "vllm_speed_tools/README.md": {
+      "bytes": 2923,
+      "sha256": "97f827f5d7bca96ca2275f97bbaa9681cd9afa51b0472a561c6dfcb909cd807f"
+    }
+  }
+}
